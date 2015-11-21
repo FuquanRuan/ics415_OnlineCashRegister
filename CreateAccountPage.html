@@ -1,0 +1,30 @@
+<template name="CreateAccountPage">
+    <div class="row">
+        <div class="col-md-3">
+            <form class="userInput" >
+                <h3>Create your OnlineCashRegister account</h3>
+                <br>
+                <label id="errorMessage"></label>
+                <br>
+                <label>
+                    Username:
+                    <input type="text" name="username">
+                </label>
+                <br>
+                <label>
+                    Password:
+                    <input type="password" name="password">
+                </label>
+                <br>
+                <label>
+                    OCRcode:
+                    <input type="password" name="OCRcode">
+                </label>
+                <input type="submit" value="CreateAccount" class="CreateAccount">
+                <br>
+                <input type="button" value="Sign in" class="SignIn">
+                <label id="createdSuccessfully"></label>
+            </form>
+        </div>
+    </div>
+</template>

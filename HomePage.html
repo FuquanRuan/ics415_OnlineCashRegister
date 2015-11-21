@@ -1,0 +1,14 @@
+<template name="HomePage">
+    <ul>
+        {{#each userData}}
+        {{>helper}}
+        {{/each}}
+    </ul>
+</template>
+
+<template name="helper">
+    <li>
+        {{username}}
+        {{password}}
+    </li>
+</template>
