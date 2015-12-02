@@ -1,0 +1,54 @@
+<template name="GuessCalculator">
+    <nav class="navbar navbar-inverse">
+        <div class="jumbotron">
+            <h1>Online Cash Register</h1>
+        </div>
+
+        <div id="userLabel" style="float: right; color: whitesmoke;">
+            <button class="signIn btn btn-primary">Login</button>
+        </div>
+
+        <div class="navbar-header">
+            <a class="navbar-brand" href="{{pathFor route='GuessHomePage'}}">Home</a>
+        </div>
+        <div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="{{pathFor route='GuessCalculator'}}">Calculator</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="row">
+        <div class="col-md-7 orderdesk" id="orderDesk">
+            <h4>Menu</h4>
+            {{#each getMenu}}
+            {{> menuItems}}
+            {{/each}}
+        </div>
+
+        <div class="col-md-3 orderdesk">
+            <h4>Receipt</h4>
+            <div id="receipt"></div>
+        </div>
+
+        <div class="col-md-2 orderdesk" id="register">
+            <h4>Register</h4>
+            Subtotal:<div id="subtotal" style="float: right">0.00</div><br>
+            Tax:<div id="tax" style="float: right">0.00</div><br>
+            Total:<div id="totalPrice" style="float: right">0.00</div><br>
+            <form class="registerForm">
+                <label>
+                    Cash:
+                    <input type="number" style="height: 200%" name="cash" step="any" min="0">
+                </label>
+            </form>
+
+            Change:<div id="changes" style="float: right">0.00</div>
+            <form class="submitData" method="POST" action="">
+                <label>
+                    <input type="submit" value="Reload">
+                </label>
+            </form>
+        </div>
+    </div>
+</template>

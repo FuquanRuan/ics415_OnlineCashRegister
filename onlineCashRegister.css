@@ -6,7 +6,7 @@ body {
 }
 
 .container-fluid {
-    margin: 0 auto;
+    margin: 0 1%;
     min-height: 100%;
     background: white;
     box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.16), 0 2px 5px 0 rgba(0, 0, 0, 0.26);
@@ -53,4 +53,14 @@ body {
 #createdSuccessfully
 {
     color: green;
+}
+
+.orderdesk
+{
+    border: solid 1px;
+}
+
+.receiptPrice
+{
+    float: right;
 }
