@@ -22,6 +22,22 @@ Router.route('/GuessCalculator',
         template: 'GuessCalculator'
     });
 
+Router.route('/GuessAboutTech',
+    {
+        name: 'GuessAboutTech',
+        template: 'GuessAboutTech'
+    }
+);
+
+Router.route('/AboutTech/:_id', function()
+    {
+        this.render('AboutTech');
+    },
+    {
+        name: 'AboutTech'
+    });
+
+
 Router.route('/HomePage/:_id', function()
     {
         this.render('HomePage');

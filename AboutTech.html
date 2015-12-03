@@ -1,0 +1,89 @@
+<template name="AboutTech">
+    {{#if Template.subscriptionsReady}}
+
+    <nav class="navbar navbar-inverse">
+        <div class="jumbotron">
+            <h1>Online Cash Register</h1>
+        </div>
+
+        <div id="userLabel" style="float: right; color: whitesmoke;">
+            User:{{getUser}}
+            <button class="signout btn btn-primary">Sign out</button>
+        </div>
+
+        <div class="navbar-header">
+            <a class="navbar-brand" href="{{pathFor 'HomePage' _id=getAccount}}">Home</a>
+        </div>
+        <div>
+            <ul class="nav navbar-nav">
+                <li><a href="{{pathFor 'OrderPage' _id=getAccount}}">Calculator</a></li>
+                <li><a href="{{pathFor 'CurrentOrder' _id=getAccount}}">Current Orders</a></li>
+                <li><a href="{{pathFor 'PastOrder' _id=getAccount}}">Past Orders</a></li>
+                <li class="active"><a href="{{pathFor 'AboutTech' _id=getAccount}}">About Tech</a></li>
+            </ul>
+        </div>
+    </nav>
+    <h1>Bootstrap WebPage Design:</h1>
+    <p>To begin, we used the Bootstrap jumbotron as our header</p>
+    <p>Also within the head of our webpage is the navbar class, which we used the "navbar-inverse" option to allow us to move through our HTML files</p>
+    <p></p>
+    <p>In the body of our webpage, we have two divs, one for the hours of operation, and the other that contains a "tab-content" display</p>
+    <p>The "tab-content" display lets us add tabs to a signle webpage without creating a new HTML file or html page</p>
+    <p>Each tab can display text, contain a table or even a image; in which case we have a 'gallery' option.</p>
+    <p>This could be buit upon by adding an 'add' or 'delete' button which could change the content of the tab with text or a new image</p>
+    <p></p>
+    <h1>Mongo Database:</h1>
+    <p>We used the Mongo DB to store various sets of information</p>
+    <p>First, we have the sign-in or create user account database which allow users to create an acount if they have a certain code.</p>
+    <p>Second, Mongo DB handles the addition and subtraction of menu items to the database which allow us to keep track of current items.</p>
+    <p>Third, the values and entries of Current and Past Order are kept by Mongo DB(on two different webpages).</p>
+    <p>Lastly, we also have the capability to clear all past orders and their entries from the database</p>
+    <p></p>
+    <h1>Iron Router:</h1>
+    <p>We use iron router to travel different templates, and using user account database _id to keep track URL.</p>
+    {{else}}
+    Loading...
+    {{/if}}
+</template>
+
+<template name="GuessAboutTech">
+    <nav class="navbar navbar-inverse">
+        <div class="jumbotron">
+            <h1>Online Cash Register</h1>
+        </div>
+
+        <div id="userLabel" style="float: right; color: whitesmoke;">
+            <button class="signIn btn btn-primary">Login</button>
+        </div>
+
+        <div class="navbar-header">
+            <a class="navbar-brand" href="{{pathFor route='GuessHomePage'}}">Home</a>
+        </div>
+        <div>
+            <ul class="nav navbar-nav">
+                <li><a href="{{pathFor route='GuessCalculator'}}">Calculator</a></li>
+                <li class="active"><a href="{{pathFor route='GuessAboutTech'}}">About Tech</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <h1>Bootstrap WebPage Design:</h1>
+    <p>To begin, we used the Bootstrap jumbotron as our header</p>
+    <p>Also within the head of our webpage is the navbar class, which we used the "navbar-inverse" option to allow us to move through our HTML files</p>
+    <p></p>
+    <p>In the body of our webpage, we have two divs, one for the hours of operation, and the other that contains a "tab-content" display</p>
+    <p>The "tab-content" display lets us add tabs to a signle webpage without creating a new HTML file or html page</p>
+    <p>Each tab can display text, contain a table or even a image; in which case we have a 'gallery' option.</p>
+    <p>This could be buit upon by adding an 'add' or 'delete' button which could change the content of the tab with text or a new image</p>
+    <p></p>
+    <h1>Mongo Database:</h1>
+    <p>We used the Mongo DB to store various sets of information</p>
+    <p>First, we have the sign-in or create user account database which allow users to create an acount if they have a certain code.</p>
+    <p>Second, Mongo DB handles the addition and subtraction of menu items to the database which allow us to keep track of current items.</p>
+    <p>Third, the values and entries of Current and Past Order are kept by Mongo DB(on two different webpages).</p>
+    <p>Lastly, we also have the capability to clear all past orders and their entries from the database</p>
+    <p></p>
+    <h1>Iron Router:</h1>
+    <p>We use iron router to travel different templates, and using user account database _id to keep track URL.</p>
+
+</template>

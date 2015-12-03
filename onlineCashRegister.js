@@ -53,6 +53,44 @@ if(Meteor.isServer)
 
 if (Meteor.isClient) {
 
+  Template.AboutTech.onCreated(function()
+  {
+    this.subscribe("loading");
+
+  });
+
+  Template.AboutTech.helpers(
+      {
+        getUser: function()
+        {
+          return checkAccount();
+        },
+        getAccount: function()
+        {
+          var url = window.location.href;
+          var urlArray = url.split("/");
+          return urlArray[4];
+        }
+      }
+  );
+
+  Template.AboutTech.events(
+      {
+        'click .signout': function()
+        {
+          Router.go('/LoginPage');
+        }
+      }
+  );
+  Template.GuessAboutTech.events(
+      {
+        'click .signIn': function()
+        {
+          Router.go('/LoginPage');
+        }
+      }
+  );
+
   Template.GuessCalculator.helpers(
       {
         getMenu: function()
@@ -479,7 +517,7 @@ if (Meteor.isClient) {
           cancelB.className = 'btn btn-danger cancelB';
 
           price.step = '0.01';
-          price.min = '0';
+          price.min = '1';
 
           form.method = 'post';
           form.action = '';
@@ -541,7 +579,11 @@ if (Meteor.isClient) {
         {
           var drink = event.target.drink.value;
           var price = event.target.price.value;
-
+          console.log(price);
+          if(price == "")
+          {
+            price = 0;
+          }
           menuItem.insert(
               {
                 drink: drink,
@@ -633,6 +675,10 @@ if (Meteor.isClient) {
         'click .CreateAccount':function()
         {
           Router.go('/CreateAccountPage');
+        },
+        'click .guessBtn': function()
+        {
+          Router.go('/');
         }
       }
   );
@@ -670,8 +716,11 @@ if (Meteor.isClient) {
 
           return false;
         },
-
         'click .SignIn':function()
+        {
+          Router.go('/LoginPage');
+        },
+        'click .guessBtn': function()
         {
           Router.go('/');
         }

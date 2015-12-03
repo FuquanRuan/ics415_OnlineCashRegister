@@ -3,6 +3,9 @@
         <div class="jumbotron">
             <h1>Online Cash Register</h1>
         </div>
+        <div id="userLabel" style="float: right; color: whitesmoke;">
+            <button class="guessBtn btn btn-primary">Login As Guess</button>
+        </div>
     </nav>
     <div class="row">
         <div class="col-md-3">
@@ -11,17 +14,19 @@
                 <br>
                 <label>
                     Username:
-                    <input type="text" name="username">
+                    <input type="text" name="username" class="styleText">
                 </label>
                 <br>
                 <label>
                     Password:
-                    <input type="password" name="password">
+                    <input type="password" name="password" class="styleText">
                 </label>
                 <input type="submit" value="Login" class="login">
                 <br>
                 <input type="button" value="CreateAccount" class="CreateAccount">
             </form>
         </div>
+
+        <div class="col-md-9"></div>
     </div>
 </template>
